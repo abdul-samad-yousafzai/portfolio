@@ -61,7 +61,9 @@
             margin-top: 50px;
             font-size: 0.9rem;
         }
-        a.button {
+
+        /* Buttons */
+        a.button, button.button {
             display: inline-block;
             padding: 14px 30px;
             background: #1976d2;
@@ -71,25 +73,73 @@
             margin-top: 20px;
             font-size: 1rem;
             transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        a.button:hover {
+        a.button:hover, button.button:hover {
             background: #0d47a1;
+        }
+
+        /* Social links */
+        .social a {
+            margin: 0 8px;
+            text-decoration: none;
+            color: #1976d2;
+            font-weight: 600;
+        }
+        .social a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .whatsapp-icon {
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <h1>Abdul Samad</h1>
         <p>Web Designer • WordPress & Elementor • PHP Laravel Learner</p>
     </header>
 
+    <!-- ABOUT -->
     <section class="section" id="about">
         <h2>About Me</h2>
         <p>
-            I am a BSCS student and beginner-level web designer focusing on modern, clean, and responsive one-page websites. I recently completed my Full-Stack Web Development course at Ehunar, and I work with WordPress, Elementor, Wix, and basic PHP/Laravel.
+            I am a BSCS student and beginner-level web designer focusing on modern,
+            clean, and responsive one-page websites. I completed my Full-Stack Web Development
+            course at Ehunar and I work with WordPress, Elementor, Wix, and basic PHP/Laravel.
         </p>
     </section>
 
+    <!-- SKILLS -->
     <section class="section" id="skills">
         <h2>Skills</h2>
         <div class="skills-list">
@@ -102,33 +152,75 @@
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section class="section" id="projects">
         <h2>Portfolio Projects</h2>
         <div class="project-list">
             <div class="card">
                 <h3>Service Business Website</h3>
-                <p>A professional one-page layout designed for small service-based companies using Elementor.</p>
+                <p>Modern one-page layout for service-based companies built using Elementor.</p>
             </div>
             <div class="card">
                 <h3>Personal Portfolio</h3>
-                <p>Clean and simple personal portfolio template highlighting skills and projects.</p>
+                <p>Clean and simple personal portfolio highlighting skills and projects.</p>
             </div>
             <div class="card">
                 <h3>Landing Page</h3>
-                <p>Modern landing page design with a structured layout and strong call-to-action.</p>
+                <p>Professional landing page with strong call-to-action and modern layout.</p>
             </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact">
         <h2>Contact</h2>
+
         <p>Email: <strong>abdulsamadyousafzi@gmail.com</strong></p>
-        <p>WhatsApp: <strong>03339596024</strong></p>
-        <a href="#" class="button">Hire Me</a>
+        <p>WhatsApp: <strong>0333 9596024</strong></p>
+
+        <!-- Buttons -->
+        <a href="https://wa.me/923339596024" class="button" target="_blank">WhatsApp Me</a>
+        <a href="mailto:abdulsamadyousafzi@gmail.com" class="button">Email Me</a>
+        <a href="tel:03339596024" class="button">Call Me</a>
+        <a href="https://www.fiverr.com/samad_yousafzai" class="button" target="_blank">Hire Me on Fiverr</a>
+
+        <br><br>
+
+        <!-- Fiverr Badge -->
+        <a href="https://www.fiverr.com/samad_yousafzai" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Fiverr_Logo.png" 
+                 alt="Fiverr" width="150">
+        </a>
+
+        <br><br>
+
+        <!-- Social Icons -->
+        <div class="social">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+
+        <br>
+
+        <!-- Contact Form -->
+        <form action="mailto:abdulsamadyousafzi@gmail.com" method="POST" enctype="text/plain" style="margin-top:30px;">
+            <h3>Send Me a Message</h3>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="button">Send Message</button>
+        </form>
     </section>
 
     <footer>
         <p>© 2025 Abdul Samad. All rights reserved.</p>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923339596024" class="whatsapp-float" target="_blank">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
 </body>
 </html>
