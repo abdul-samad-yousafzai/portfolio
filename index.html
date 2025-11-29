@@ -1,219 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdul Samad - Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: #f2f4f8;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #0d47a1, #1976d2);
-            color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            font-weight: 700;
-        }
-        header p {
-            margin: 15px 0 0;
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
-        .section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #0d47a1;
-        }
-        .skills-list, .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        footer {
-            background: #0d47a1;
-            color: #eee;
-            text-align: center;
-            padding: 25px;
-            margin-top: 50px;
-            font-size: 0.9rem;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdul Samad - Portfolio</title>
 
-        /* Buttons */
-        a.button, button.button {
-            display: inline-block;
-            padding: 14px 30px;
-            background: #1976d2;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-size: 1rem;
-            transition: 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        a.button:hover, button.button:hover {
-            background: #0d47a1;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* Social links */
-        .social a {
-            margin: 0 8px;
-            text-decoration: none;
-            color: #1976d2;
-            font-weight: 600;
-        }
-        .social a:hover {
-            text-decoration: underline;
-        }
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* Contact Form */
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-family: inherit;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0f111a;
+    color: #eee;
+    scroll-behavior: smooth;
+}
 
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-        .whatsapp-icon {
-            margin-top: 15px;
-        }
-    </style>
+/* -------------------- PREMIUM HEADER -------------------- */
+header {
+    background: linear-gradient(135deg, #0a0f1e, #132b4f, #0b1224);
+    padding: 90px 20px;
+    text-align: center;
+    color: white;
+    animation: fadeHeader 1.5s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #1e90ff, #00eaff, #6eb6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 25px rgba(0, 153, 255, 0.45);
+    animation: glowName 3s infinite alternate;
+}
+
+header p {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #d7e6ff;
+}
+
+@keyframes glowName {
+    from { text-shadow: 0 0 15px rgba(0, 153, 255, 0.25); }
+    to { text-shadow: 0 0 30px rgba(0, 255, 255, 0.55); }
+}
+
+@keyframes fadeHeader {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------- SECTIONS -------------------- */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1e90ff;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1e90ff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* -------------------- CARDS -------------------- */
+.skills-list, .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #1a1c2b;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.7), 0 0 15px #1e90ff inset;
+}
+
+/* -------------------- BUTTONS -------------------- */
+a.button, button.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px 5px 0 0;
+    font-size: 1rem;
+    transition: 0.4s ease;
+    border: none;
+    cursor: pointer;
+}
+
+a.button:hover, button.button:hover {
+    background: #0d3c78;
+    box-shadow: 0 0 15px #1e90ff, 0 0 25px #00ffff inset;
+}
+
+/* -------------------- FORM -------------------- */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #1a1c2b;
+    color: #eee;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 8px #1e90ff;
+    outline: none;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background: #0a1b2b;
+    color: #eee;
+    text-align: center;
+    padding: 25px;
+}
+
+.social a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+
+.social a:hover {
+    color: #1e90ff;
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Abdul Samad</h1>
-        <p>Web Designer • WordPress & Elementor • PHP Laravel Learner</p>
-    </header>
+<header>
+    <h1>Abdul Samad</h1>
+    <p>Web Designer • WordPress | Elementor | PHP Laravel Learner</p>
+</header>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a BSCS student and beginner-level web designer focusing on modern,
-            clean, and responsive one-page websites. I completed my Full-Stack Web Development
-            course at Ehunar and I work with WordPress, Elementor, Wix, and basic PHP/Laravel.
-        </p>
-    </section>
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I am a BSCS student and beginner-level web designer focusing on modern, clean, and responsive websites. I completed my Full-Stack Web Development course at Ehunar and I work with WordPress, Elementor, Wix, and basic PHP/Laravel.</p>
+</section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <div class="card">WordPress Development</div>
-            <div class="card">Elementor Page Builder</div>
-            <div class="card">Wix Website Design</div>
-            <div class="card">PHP & Laravel Basics</div>
-            <div class="card">Responsive Web Design</div>
-            <div class="card">HTML / CSS</div>
+<section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+        <div class="card">WordPress Development</div>
+        <div class="card">Elementor Page Builder</div>
+        <div class="card">Wix Website Design</div>
+        <div class="card">PHP & Laravel Basics</div>
+        <div class="card">Responsive Web Design</div>
+        <div class="card">HTML / CSS</div>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <h2>Portfolio Projects</h2>
+    <div class="project-list">
+        <div class="card">
+            <h3>Service Business Website</h3>
+            <p>Modern layout for service companies built using Elementor.</p>
         </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-        <h2>Portfolio Projects</h2>
-        <div class="project-list">
-            <div class="card">
-                <h3>Service Business Website</h3>
-                <p>Modern one-page layout for service-based companies built using Elementor.</p>
-            </div>
-            <div class="card">
-                <h3>Personal Portfolio</h3>
-                <p>Clean and simple personal portfolio highlighting skills and projects.</p>
-            </div>
-            <div class="card">
-                <h3>Landing Page</h3>
-                <p>Professional landing page with strong call-to-action and modern layout.</p>
-            </div>
+        <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>Clean personal portfolio highlighting skills and projects.</p>
         </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-        <h2>Contact</h2>
-
-        <!-- Buttons -->
-        <a href="https://wa.me/923339596024" class="button" target="_blank">WhatsApp Me</a>
-        <a href="mailto:abdulsamadyousafzi@gmail.com" class="button">Email Me</a>
-        <a href="tel:03339596024" class="button">Call Me</a>
-        <a href="https://www.fiverr.com/samad_yousafzai" class="button" target="_blank">Hire Me on Fiverr</a>
-
-        <br><br>
-
-
-        <br><br>
-
-        <!-- Social Icons -->
-        <div class="social">
-            <a href="http://abdulsamadyousafzai.link/" target="_blank">MY ID</a> |
-            <a href="https://www.instagram.com/abdul_samad_yousafzai?igsh=ZGo1dmIwbDdwbXRv" target="_blank">Instagram</a> |
-            <a href="https://www.linkedin.com/in/abdul-samad-yousafzai/" target="_blank">LinkedIn</a>
-            <a href="https://www.facebook.com/share/17p9pkxBHb/" target="_blank">Facebook</a>
+        <div class="card">
+            <h3>Landing Page</h3>
+            <p>Professional landing page with strong call-to-action and modern layout.</p>
         </div>
+    </div>
+</section>
 
-        <br>
+<section class="section" id="contact">
+    <h2>Contact</h2>
 
-        <!-- Contact Form -->
-        <form action="mailto:abdulsamadyousafzi@gmail.com" method="POST" enctype="text/plain" style="margin-top:30px;">
-            <h3>Send Me a Message</h3>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="button">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2025 Abdul Samad. All rights reserved.</p>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923339596024" class="whatsapp-float" target="_blank">
-        <span class="whatsapp-icon">💬</span>
+    <a href="mailto:abdulsamadyousafzi@gmail.com" class="button">
+        <i class="fas fa-envelope"></i> Email Me
     </a>
+
+    <a href="https://wa.me/923339596024" class="button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Me
+    </a>
+
+    <form action="https://formspree.io/f/myzqaykb" method="POST" style="margin-top:25px;">
+        <h3>Send Me a Message</h3>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="button"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <div class="social">
+        <a href="mailto:abdulsamadyousafzi@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/923339596024" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/abdul_samad_yousafzai" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/abdulsamadyousafzi" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/abdul-samad-yousafzai/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>© 2025 Abdul Samad. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
